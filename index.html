@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071b10">
+<title>Rick Perez | Mega Marshalon</title>
+<style>
+*{box-sizing:border-box} body{margin:0;min-height:100vh;background:radial-gradient(circle at top,#174c2b,#07130c 55%,#000);color:#fff;font-family:Arial,Helvetica,sans-serif;display:flex;align-items:center;justify-content:center;padding:24px}
+.wrap{width:min(100%,520px);text-align:center}.card{width:100%;height:auto;border-radius:20px;box-shadow:0 18px 55px #000;display:block}
+.controls{display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+button,a.btn{border:2px solid #d7ad32;background:#0b2d18;color:#f6d86d;padding:12px 18px;border-radius:999px;font-weight:800;font-size:15px;text-decoration:none;cursor:pointer}
+button:hover,a.btn:hover{background:#164d2b}.hint{opacity:.72;font-size:13px;margin-top:13px}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <img id="card" class="card" src="rick-perez.png" alt="Rick Perez School Marshal trading card">
+  <div class="controls">
+    <button id="flip">Show Mega Marshalon</button>
+    <a id="save" class="btn" href="rick-perez.png" download="Rick-Perez-Card.png">Save Card</a>
+  </div>
+  <div class="hint">Tap the button to switch between the face card and Mega Marshalon.</div>
+</main>
+<script>
+const card=document.getElementById('card'), flip=document.getElementById('flip'), save=document.getElementById('save');
+let back=false;
+flip.onclick=()=>{
+ back=!back;
+ card.src=back?'mega-marshalon.png':'rick-perez.png';
+ card.alt=back?'Mega Marshalon character trading card':'Rick Perez School Marshal trading card';
+ flip.textContent=back?'Show Rick Perez':'Show Mega Marshalon';
+ save.href=card.src;
+ save.download=back?'Mega-Marshalon-Card.png':'Rick-Perez-Card.png';
+};
+</script>
+</body>
+</html>
